@@ -1,0 +1,627 @@
+body {
+    /*    background: #d57556 url(../images/original1.jpg) no-repeat center center fixed; */
+    background: #000000 url(../Images/1.jpg) no-repeat center center fixed;
+    /*    background: #d57556 url(../images/original1.jpg) no-repeat center center fixed;*/
+    color: rgba(255, 255, 255, 0.95);
+    /* Цвет текста */
+    margin: 0;
+    /* Убираем отступы */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* font-family: "CaviarDreamsRegular"; */
+
+@font-face {
+    font-family: "CaviarDreamsRegular";
+    src: url("../fonts/CaviarDreamsRegular/CaviarDreamsRegular.eot");
+    src: url("../fonts/CaviarDreamsRegular/CaviarDreamsRegular.eot?#iefix")format("embedded-opentype"), url("../fonts/CaviarDreamsRegular/CaviarDreamsRegular.woff") format("woff"), url("../fonts/CaviarDreamsRegular/CaviarDreamsRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+/* font-family: "CaviarDreamsBold"; */
+
+@font-face {
+    font-family: "CaviarDreamsBold";
+    src: url("../fonts/CaviarDreamsBold/CaviarDreamsBold.eot");
+    src: url("../fonts/CaviarDreamsBold/CaviarDreamsBold.eot?#iefix")format("embedded-opentype"), url("../fonts/CaviarDreamsBold/CaviarDreamsBold.woff") format("woff"), url("../fonts/CaviarDreamsBold/CaviarDreamsBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+/* font-family: "CaviarDreamsItalic"; */
+
+@font-face {
+    font-family: "CaviarDreamsItalic";
+    src: url("../fonts/CaviarDreamsItalic/CaviarDreamsItalic.eot");
+    src: url("../fonts/CaviarDreamsItalic/CaviarDreamsItalic.eot?#iefix")format("embedded-opentype"), url("../fonts/CaviarDreamsItalic/CaviarDreamsItalic.woff") format("woff"), url("../fonts/CaviarDreamsItalic/CaviarDreamsItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+/* font-family: "CaviarDreamsBoldItalic"; */
+
+@font-face {
+    font-family: "CaviarDreamsBoldItalic";
+    src: url("../fonts/CaviarDreamsBoldItalic/CaviarDreamsBoldItalic.eot");
+    src: url("../fonts/CaviarDreamsBoldItalic/CaviarDreamsBoldItalic.eot?#iefix")format("embedded-opentype"), url("../fonts/CaviarDreamsBoldItalic/CaviarDreamsBoldItalic.woff") format("woff"), url("../fonts/CaviarDreamsBoldItalic/CaviarDreamsBoldItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    font-family: "CaviarDreamsBold";
+    font-size: 30px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo_box {
+    color: rgba(255, 255, 255, 0.95);
+    width: 460px;
+/*    background: rgba(255, 255, 255, 0.15);*/
+    background: transparent;
+    position: relative;
+    top: 200px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.logo {
+    /*    display: block;*/
+    width: 130px;
+    height: 168px;
+    margin: 10px 10px 10px 15px;
+    display: inline-block; 
+    /*padding-left: calc(50% - 200px);
+    margin-top: 10px;*/
+
+}
+
+ul {
+    /*display: inline-block;*/
+    position: absolute;
+    display: block;
+    list-style-type: none;
+    top: 15px;
+    left: 110px;
+}
+
+ul li {
+    font-family: "CaviarDreamsBold";
+    font-size: 20px;
+    margin: 10px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rounded {
+    width: 340px;
+    height: 40px;
+    margin: auto;
+    padding: 4px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 5px 5px;
+}
+
+.icon2 {
+    float: left;
+    width: 30px;
+    height: 34px;
+    margin: 3px 5px 5px 5px;
+}
+
+input {
+    font-family: "CaviarDreamsRegular";
+    font-size: 18px;
+    height: 30px;
+    width: 260px;
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    margin: 4px 0px 5px 10px;
+/*    display: block;
+    margin: auto;
+    margin-left: 50px;
+    margin-top: 4px;*/
+    border: none;
+    background: transparent;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: rgba(0, 0, 0, 1.0) !important;
+    color: #000 !important;
+}
+
+textarea:focus,
+input:focus {
+    outline: 0;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #fff;
+    opacity: 0.8;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+    opacity: 0.5;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #fff;
+    opacity: 0.7;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+    opacity: 0.7;
+}
+
+.btn {
+    display: block;
+    width: 348px;
+    height: 50px;
+    margin: auto;
+/*    left: 100px;*/
+    margin-top: 40px;
+    background: #4e667d;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    border: none;
+    font-family: "CaviarDreamsRegular";
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    outline: none;
+}
+
+.btn:hover {
+    background: #1167ac;
+    text-decoration: none;
+}
+
+button:not([disabled]) {
+    cursor: pointer;
+}
+
+.failure_note {
+    display: block;
+    margin: auto;
+    margin-top: 400px;
+}
+
+.info_box {
+    padding: 10px 20px;
+
+}
+
+.info_box a {
+    font-family: "CaviarDreamsRegular";
+    color: #fff;
+    opacity: 0.7;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 5px; 
+}
+
+.info_box a + a {
+    float: right;
+}
+
+.info_box a:hover {
+    text-decoration: underline;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, 0.4);
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+
+/*//////////////////////////////*/
+
+.windows8 {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 78px;
+    height:78px;
+    margin:auto;
+}
+
+.windows8 .wBall {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    opacity: 0;
+    transform: rotate(225deg);
+        -o-transform: rotate(225deg);
+        -ms-transform: rotate(225deg);
+        -webkit-transform: rotate(225deg);
+        -moz-transform: rotate(225deg);
+    animation: orbit 6.96s infinite;
+        -o-animation: orbit 6.96s infinite;
+        -ms-animation: orbit 6.96s infinite;
+        -webkit-animation: orbit 6.96s infinite;
+        -moz-animation: orbit 6.96s infinite;
+}
+
+.windows8 .wBall .wInnerBall{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(0,0,0);
+    left:0px;
+    top:0px;
+    border-radius: 10px;
+        -o-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+}
+
+.windows8 #wBall_1 {
+    animation-delay: 1.52s;
+        -o-animation-delay: 1.52s;
+        -ms-animation-delay: 1.52s;
+        -webkit-animation-delay: 1.52s;
+        -moz-animation-delay: 1.52s;
+}
+
+.windows8 #wBall_2 {
+    animation-delay: 0.3s;
+        -o-animation-delay: 0.3s;
+        -ms-animation-delay: 0.3s;
+        -webkit-animation-delay: 0.3s;
+        -moz-animation-delay: 0.3s;
+}
+
+.windows8 #wBall_3 {
+    animation-delay: 0.61s;
+        -o-animation-delay: 0.61s;
+        -ms-animation-delay: 0.61s;
+        -webkit-animation-delay: 0.61s;
+        -moz-animation-delay: 0.61s;
+}
+
+.windows8 #wBall_4 {
+    animation-delay: 0.91s;
+        -o-animation-delay: 0.91s;
+        -ms-animation-delay: 0.91s;
+        -webkit-animation-delay: 0.91s;
+        -moz-animation-delay: 0.91s;
+}
+
+.windows8 #wBall_5 {
+    animation-delay: 1.22s;
+        -o-animation-delay: 1.22s;
+        -ms-animation-delay: 1.22s;
+        -webkit-animation-delay: 1.22s;
+        -moz-animation-delay: 1.22s;
+}
+
+
+
+@keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index:99;
+        transform: rotate(180deg);
+        animation-timing-function: ease-out;
+    }
+
+    7% {
+        opacity: 1;
+        transform: rotate(300deg);
+        animation-timing-function: linear;
+        origin:0%;
+    }
+
+    30% {
+        opacity: 1;
+        transform:rotate(410deg);
+        animation-timing-function: ease-in-out;
+        origin:7%;
+    }
+
+    39% {
+        opacity: 1;
+        transform: rotate(645deg);
+        animation-timing-function: linear;
+        origin:30%;
+    }
+
+    70% {
+        opacity: 1;
+        transform: rotate(770deg);
+        animation-timing-function: ease-out;
+        origin:39%;
+    }
+
+    75% {
+        opacity: 1;
+        transform: rotate(900deg);
+        animation-timing-function: ease-out;
+        origin:70%;
+    }
+
+    76% {
+    opacity: 0;
+        transform:rotate(900deg);
+    }
+
+    100% {
+    opacity: 0;
+        transform: rotate(900deg);
+    }
+}
+
+@-o-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index:99;
+        -o-transform: rotate(180deg);
+        -o-animation-timing-function: ease-out;
+    }
+
+    7% {
+        opacity: 1;
+        -o-transform: rotate(300deg);
+        -o-animation-timing-function: linear;
+        -o-origin:0%;
+    }
+
+    30% {
+        opacity: 1;
+        -o-transform:rotate(410deg);
+        -o-animation-timing-function: ease-in-out;
+        -o-origin:7%;
+    }
+
+    39% {
+        opacity: 1;
+        -o-transform: rotate(645deg);
+        -o-animation-timing-function: linear;
+        -o-origin:30%;
+    }
+
+    70% {
+        opacity: 1;
+        -o-transform: rotate(770deg);
+        -o-animation-timing-function: ease-out;
+        -o-origin:39%;
+    }
+
+    75% {
+        opacity: 1;
+        -o-transform: rotate(900deg);
+        -o-animation-timing-function: ease-out;
+        -o-origin:70%;
+    }
+
+    76% {
+    opacity: 0;
+        -o-transform:rotate(900deg);
+    }
+
+    100% {
+    opacity: 0;
+        -o-transform: rotate(900deg);
+    }
+}
+
+@-ms-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index:99;
+        -ms-transform: rotate(180deg);
+        -ms-animation-timing-function: ease-out;
+    }
+
+    7% {
+        opacity: 1;
+        -ms-transform: rotate(300deg);
+        -ms-animation-timing-function: linear;
+        -ms-origin:0%;
+    }
+
+    30% {
+        opacity: 1;
+        -ms-transform:rotate(410deg);
+        -ms-animation-timing-function: ease-in-out;
+        -ms-origin:7%;
+    }
+
+    39% {
+        opacity: 1;
+        -ms-transform: rotate(645deg);
+        -ms-animation-timing-function: linear;
+        -ms-origin:30%;
+    }
+
+    70% {
+        opacity: 1;
+        -ms-transform: rotate(770deg);
+        -ms-animation-timing-function: ease-out;
+        -ms-origin:39%;
+    }
+
+    75% {
+        opacity: 1;
+        -ms-transform: rotate(900deg);
+        -ms-animation-timing-function: ease-out;
+        -ms-origin:70%;
+    }
+
+    76% {
+    opacity: 0;
+        -ms-transform:rotate(900deg);
+    }
+
+    100% {
+    opacity: 0;
+        -ms-transform: rotate(900deg);
+    }
+}
+
+@-webkit-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index:99;
+        -webkit-transform: rotate(180deg);
+        -webkit-animation-timing-function: ease-out;
+    }
+
+    7% {
+        opacity: 1;
+        -webkit-transform: rotate(300deg);
+        -webkit-animation-timing-function: linear;
+        -webkit-origin:0%;
+    }
+
+    30% {
+        opacity: 1;
+        -webkit-transform:rotate(410deg);
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-origin:7%;
+    }
+
+    39% {
+        opacity: 1;
+        -webkit-transform: rotate(645deg);
+        -webkit-animation-timing-function: linear;
+        -webkit-origin:30%;
+    }
+
+    70% {
+        opacity: 1;
+        -webkit-transform: rotate(770deg);
+        -webkit-animation-timing-function: ease-out;
+        -webkit-origin:39%;
+    }
+
+    75% {
+        opacity: 1;
+        -webkit-transform: rotate(900deg);
+        -webkit-animation-timing-function: ease-out;
+        -webkit-origin:70%;
+    }
+
+    76% {
+    opacity: 0;
+        -webkit-transform:rotate(900deg);
+    }
+
+    100% {
+    opacity: 0;
+        -webkit-transform: rotate(900deg);
+    }
+}
+
+@-moz-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index:99;
+        -moz-transform: rotate(180deg);
+        -moz-animation-timing-function: ease-out;
+    }
+
+    7% {
+        opacity: 1;
+        -moz-transform: rotate(300deg);
+        -moz-animation-timing-function: linear;
+        -moz-origin:0%;
+    }
+
+    30% {
+        opacity: 1;
+        -moz-transform:rotate(410deg);
+        -moz-animation-timing-function: ease-in-out;
+        -moz-origin:7%;
+    }
+
+    39% {
+        opacity: 1;
+        -moz-transform: rotate(645deg);
+        -moz-animation-timing-function: linear;
+        -moz-origin:30%;
+    }
+
+    70% {
+        opacity: 1;
+        -moz-transform: rotate(770deg);
+        -moz-animation-timing-function: ease-out;
+        -moz-origin:39%;
+    }
+
+    75% {
+        opacity: 1;
+        -moz-transform: rotate(900deg);
+        -moz-animation-timing-function: ease-out;
+        -moz-origin:70%;
+    }
+
+    76% {
+    opacity: 0;
+        -moz-transform:rotate(900deg);
+    }
+
+    100% {
+    opacity: 0;
+        -moz-transform: rotate(900deg);
+    }
+}
