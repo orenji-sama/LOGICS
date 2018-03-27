@@ -16,6 +16,7 @@ namespace WebApplication1
     {
 
         string Com;
+        string standartCom = "SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND  CREATEDATE is NULL THEN 'Реализуется в срок ' || PLANDATE    WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') <= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND  CREATEDATE is NULL THEN 'Превышен срок реализации'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is not NULL THEN 'Выполнено с нарушением срока'    END as TIMEPASS,GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE FROM LOGICS2 ORDER BY LOGROWID";
 
         protected void Command(string Com)
         {
@@ -52,8 +53,9 @@ namespace WebApplication1
             con.Open();
             cmd.ExecuteNonQuery();            
             con.Close();
-            Com = string.Format("SELECT * FROM LOGICS2 ORDER BY LOGROWID");
+            Com = string.Format(standartCom);
             Command(Com);
+
         }
 
         protected void SetGridWidth ()
@@ -127,8 +129,10 @@ namespace WebApplication1
 
             if (!Page.IsPostBack)
             {
-                Com = string.Format("SELECT * FROM LOGICS2 ORDER BY LOGROWID");
-                Command(Com);                
+               // Com = string.Format("SELECT * FROM LOGICS2 ORDER BY LOGROWID");
+
+                Com = string.Format(standartCom);
+                Command(Com);               
             }            
 
             SetGridWidth();
@@ -183,7 +187,7 @@ namespace WebApplication1
         void ClearTable ()
         {           
             TextBox1.Text = "";                    
-             Com = string.Format("SELECT * FROM LOGICS2 LOGROWID");       
+             Com = string.Format(standartCom);       
              Command(Com);          
          }
 
@@ -196,7 +200,7 @@ namespace WebApplication1
             {
                 if (TextBox1.Text != "") 
                 {                    
-                        Com = string.Format("SELECT * FROM LOGICS2 WHERE RUBRNAMESPD like '%" + TextBox1.Text + "%' ORDER BY LOGROWID");
+                        Com = string.Format("SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND  CREATEDATE is NULL THEN 'Реализуется в срок ' || PLANDATE    WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') <= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND  CREATEDATE is NULL THEN 'Превышен срок реализации'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is not NULL THEN 'Выполнено с нарушением срока'    END as TIMEPASS,GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE FROM LOGICS2 WHERE RUBRNAMESPD like '%" + TextBox1.Text + "%' ORDER BY LOGROWID");
                         Command(Com);                    
                 }     
             }
@@ -209,7 +213,7 @@ namespace WebApplication1
                 newrequest= request.Replace (" ", "' OR RUBRNAMESPD = '");                   
                if (TextBox1.Text != "")
                {
-                   Com = string.Format("SELECT * FROM LOGICS2 WHERE RUBRNAMESPD = '" + newrequest + "'");
+                   Com = string.Format("SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND  CREATEDATE is NULL THEN 'Реализуется в срок ' || PLANDATE    WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') <= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND  CREATEDATE is NULL THEN 'Превышен срок реализации'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is not NULL THEN 'Выполнено с нарушением срока'    END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE FROM LOGICS2 WHERE RUBRNAMESPD = '" + newrequest + "'");
                   Command(Com);  
                }
             }
@@ -362,6 +366,17 @@ namespace WebApplication1
             GridView2.EditIndex = -1;
             FillGrid();
         }
+
+      /*  Вот это пока ковыряю, ругается
+       * protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                TextBox textBox = ((TextBox)e.Row.FindControl("GLPI"));
+                HyperLink HyperLink1 = ((TextBox)e.Row.FindControl("GLPI"));
+            }
+        }
+        */
     }
 }
 

@@ -22,7 +22,7 @@
         <br />
         </div>
 
-     <asp:GridView ID="GridView2" runat="server" ItemStyle-CssClass="maxWidthGrid"  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" CellPadding="3" BorderWidth="1px"  HorizontalAlign="Center" PageSize="50" AllowUserToResizeColumns="true" OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Vertical" OnRowDeleting="GridView2_RowDeleting" OnRowEditing="GridView2_RowEditing" OnRowCancelingEdit="GridView2_RowCancelingEdit" OnRowUpdating="GridView2_RowUpdating">
+     <asp:GridView ID="GridView2" runat="server" ItemStyle-CssClass="maxWidthGrid"  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" CellPadding="3" BorderWidth="1px"  HorizontalAlign="Center" PageSize="50" AllowUserToResizeColumns="true" OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Vertical" OnRowDeleting="GridView2_RowDeleting" OnRowEditing="GridView2_RowEditing" OnRowCancelingEdit="GridView2_RowCancelingEdit" OnRowUpdating="GridView2_RowUpdating" OnRowDataBound="GridView2_RowDataBound">
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>      
                 <asp:BoundField DataField="LOGNAME" HeaderText="Название процесса в СПД" SortExpression="A"  ControlStyle-Width="193"> 
@@ -55,11 +55,11 @@
                 <asp:BoundField DataField="TIMEPASS" HeaderText="Превышение срока реализации (14 рабочих дней)" SortExpression="J" ControlStyle-Width="81">
                 
 <ControlStyle Width="78px"></ControlStyle>
-                </asp:BoundField>
-                
+                </asp:BoundField>                
                  <asp:TemplateField HeaderText="Номер GLPI" SortExpression="K">
                      <EditItemTemplate>
-                         <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
+                         <asp:TextBox ID="TextBox22" runat="server"
+                          Text='<%# Bind("GLPI") %>'></asp:TextBox>
                      </EditItemTemplate>
                      <ItemTemplate>
                          <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("GLPI", "http://dgi-glpi.mlc.gov/glpi/front/ticket.form.php?id={0}") %>' Text='<%# Eval("GLPI") %>'></asp:HyperLink>
