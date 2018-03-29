@@ -30,65 +30,189 @@
       <div class="popup" style="margin:auto; padding: 10px; width:800px; border-radius: 1px; border-style:solid; border-color:#006699; border-width:1px" >
             <asp:Panel ID="popupPanel" VerticalAlign="Center" runat="server">  
 
-                <asp:Label ID="Label4" runat="server" Height="100px" Width="160px" TextAlign="center" Text="Название процесса в СПД:"></asp:Label>
-                 <asp:TextBox ID="TextBox2" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="400px" TextMode="MultiLine" Wrap="true"></asp:TextBox> <br/>
-
-                 <asp:Label ID="Label2" runat="server" Height="100px" Text="Номер процесса в СПД:" Width="160px"></asp:Label>
-                 <asp:TextBox ID="TextBox3" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label5" runat="server" Height="100px" Text="Рубрика в ЕСРД/ДК:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox4" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label6" runat="server" Height="100px" Text="ID DK:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox5" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label7" runat="server" Height="100px" Text="Дата получения логики:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label8" runat="server" Height="100px" Text="Номер служебной записки, по которой логика направлялась:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox7" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label9" runat="server" Height="100px" Text="Реакция Управления информатизации:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox8" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label10" runat="server" Height="100px" Text="Номер служебной записки по реакции:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox9" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label11" runat="server" Height="100px" Text="Дата реакции Управления информатизации:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox10" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label12" runat="server" Height="100px" Text="Превышение срока реализации (14 рабочих дней):" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox11" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label13" runat="server" Height="100px" Text="Номер GLPI:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox12" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label14" runat="server" Height="100px" Text="Дата передачи на тестирование:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox13" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label15" runat="server" Height="100px" Text="Номер АКТа по факту передачи на тестирование:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox14" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label16" runat="server" Height="100px" Text="Дата реализации (ввод в эксплуатацию):" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox15" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label17" runat="server" Height="100px" Text="Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление):" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox16" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label18" runat="server" Height="100px" Text="Комментарий:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox17" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label19" runat="server" Height="100px" Text="Наличие логики в БР:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox18" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label20" runat="server" Height="100px" Text="Управление-исполнитель по логике:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox19" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label21" runat="server" Height="100px" Text="Просрочено дней:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox20" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
-
-                <asp:Label ID="Label22" runat="server" Height="100px" Text="Плановая дата:" Width="160px"></asp:Label>
-                <asp:TextBox ID="TextBox21" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>               
+                <table style="width: 100%">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label4" runat="server" Text="Название процесса в СПД:" TextAlign="center" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox2" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400px" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label2" runat="server" Text="Номер процесса в СПД:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox3" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label5" runat="server" Text="Рубрика в ЕСРД/ДК:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox4" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label6" runat="server" Text="ID DK:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox5" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label7" runat="server" Text="Дата получения логики:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label8" runat="server" Text="Номер служебной записки, по которой логика направлялась:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox7" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label9" runat="server" Text="Реакция Управления информатизации:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox8" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label10" runat="server" Text="Номер служебной записки по реакции:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox9" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label11" runat="server" Text="Дата реакции Управления информатизации:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox10" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label12" runat="server" Text="Превышение срока реализации (14 рабочих дней):" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox11" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label13" runat="server" Text="Номер GLPI:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox12" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label14" runat="server" Text="Дата передачи на тестирование:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox13" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label15" runat="server" Text="Номер АКТа по факту передачи на тестирование:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox14" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label16" runat="server" Text="Дата реализации (ввод в эксплуатацию):" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox15" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label17" runat="server" Text="Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление):" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox16" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label18" runat="server" Height="16px" Text="Комментарий:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox17" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label19" runat="server" Text="Наличие логики в БР:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox18" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label20" runat="server" Text="Управление-исполнитель по логике:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox19" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label21" runat="server" Text="Просрочено дней:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox20" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="card-label">
+                            <asp:Label ID="Label22" runat="server" Text="Плановая дата:" Width="160px"></asp:Label>
+                        </td>
+                        <td class = "card-textbox">
+                            <asp:TextBox ID="TextBox21" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+                <br/>               
                 <asp:Button ID="Button3" runat="server"  Height="40" OnClick="Button3_Click" Text="Добавить" Width="76px" />&nbsp;&nbsp;&nbsp;
                   <asp:Button ID="Button5" runat="server"  Height="40px" OnClick="Button5_Click" Text="Внести изменения" Width="117px" />&nbsp;&nbsp;&nbsp;
                   <asp:Button ID="Button6" runat="server"  Height="40" OnClick="Button2_Click" Text="Отмена" Width="76px" />
