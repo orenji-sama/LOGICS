@@ -12,4 +12,11 @@ body {
     padding: 5px
 }
 
+.card-label {
+    text-align: right;
+    padding: 6px;
+}
 
+.card-textbox {
+    text-align: left;
+}
