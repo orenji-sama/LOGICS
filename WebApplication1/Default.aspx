@@ -2,10 +2,14 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
       
-    
+  
  <div class="jumbotron" >
         <div class="text-center">
-            <br />
+            <br />          
+           
+            
+         
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />      
             <asp:Label ID="Label3" runat="server" Height="30px" Text="Введите номера логик через зарятую:"></asp:Label>
@@ -15,14 +19,82 @@
             &nbsp;&nbsp;&nbsp;
             <asp:CheckBox ID="CheckBox1" runat="server" Text=" Поиск по нескольким логикам" Font-Bold="False" AutoPostBack="True"/>
             <br />
+            <br /> </span><asp:Button ID="Button4" runat="server" Height="37px" Text="Добавить" style="font-size: small" Width="80px" OnClick="Button4_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;
             </span><asp:Button ID="Button1" runat="server" Height="37px" Text="Поиск" style="font-size: small" Width="80px" OnClick="Button1_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Height="37px" Text="Сброс" style="font-size: small" Width="80px" OnClick="Button2_Click" />
             <br />
         <br />
         </div>
+      <div class="popup" style="margin:auto; padding: 10px; width:800px; border-radius: 1px; border-style:solid; border-color:#006699; border-width:1px" >
+            <asp:Panel ID="popupPanel" VerticalAlign="Center" runat="server">  
 
-     <asp:GridView ID="GridView2" runat="server" ItemStyle-CssClass="maxWidthGrid"  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" CellPadding="3" BorderWidth="1px"  HorizontalAlign="Center" PageSize="50" AllowUserToResizeColumns="true" OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Vertical" OnRowDeleting="GridView2_RowDeleting" OnRowEditing="GridView2_RowEditing" OnRowCancelingEdit="GridView2_RowCancelingEdit" OnRowUpdating="GridView2_RowUpdating" OnRowDataBound="GridView2_RowDataBound">
+                <asp:Label ID="Label4" runat="server" Height="100px" Width="160px" TextAlign="center" Text="Название процесса в СПД:"></asp:Label>
+                 <asp:TextBox ID="TextBox2" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="400px" TextMode="MultiLine" Wrap="true"></asp:TextBox> <br/>
+
+                 <asp:Label ID="Label2" runat="server" Height="100px" Text="Номер процесса в СПД:" Width="160px"></asp:Label>
+                 <asp:TextBox ID="TextBox3" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label5" runat="server" Height="100px" Text="Рубрика в ЕСРД/ДК:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox4" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label6" runat="server" Height="100px" Text="ID DK:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox5" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label7" runat="server" Height="100px" Text="Дата получения логики:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label8" runat="server" Height="100px" Text="Номер служебной записки, по которой логика направлялась:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox7" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label9" runat="server" Height="100px" Text="Реакция Управления информатизации:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox8" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label10" runat="server" Height="100px" Text="Номер служебной записки по реакции:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox9" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label11" runat="server" Height="100px" Text="Дата реакции Управления информатизации:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox10" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label12" runat="server" Height="100px" Text="Превышение срока реализации (14 рабочих дней):" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox11" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label13" runat="server" Height="100px" Text="Номер GLPI:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox12" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label14" runat="server" Height="100px" Text="Дата передачи на тестирование:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox13" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label15" runat="server" Height="100px" Text="Номер АКТа по факту передачи на тестирование:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox14" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label16" runat="server" Height="100px" Text="Дата реализации (ввод в эксплуатацию):" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox15" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label17" runat="server" Height="100px" Text="Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление):" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox16" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label18" runat="server" Height="100px" Text="Комментарий:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox17" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label19" runat="server" Height="100px" Text="Наличие логики в БР:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox18" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label20" runat="server" Height="100px" Text="Управление-исполнитель по логике:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox19" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label21" runat="server" Height="100px" Text="Просрочено дней:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox20" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>
+
+                <asp:Label ID="Label22" runat="server" Height="100px" Text="Плановая дата:" Width="160px"></asp:Label>
+                <asp:TextBox ID="TextBox21" runat="server" Font-Underline="False" Height="100" Width="400" TextMode="MultiLine" Wrap="true" style="resize:none"></asp:TextBox><br/>               
+                <asp:Button ID="Button3" runat="server"  Height="40" OnClick="Button3_Click" Text="Добавить" Width="76px" />&nbsp;&nbsp;&nbsp;
+                  <asp:Button ID="Button5" runat="server"  Height="40px" OnClick="Button5_Click" Text="Внести изменения" Width="117px" />&nbsp;&nbsp;&nbsp;
+                  <asp:Button ID="Button6" runat="server"  Height="40" OnClick="Button2_Click" Text="Отмена" Width="76px" />
+            </asp:Panel></div>
+
+     <asp:GridView ID="GridView2" runat="server" ItemStyle-CssClass="maxWidthGrid"  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" CellPadding="3" BorderWidth="1px"  HorizontalAlign="Center" PageSize="50" AllowUserToResizeColumns="true" OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Vertical" OnRowDeleting="GridView2_RowDeleting" OnRowEditing="GridView2_RowEditing">
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>      
                 <asp:BoundField DataField="LOGNAME" HeaderText="Название процесса в СПД" SortExpression="A"  ControlStyle-Width="193"> 
@@ -96,7 +168,7 @@
                 <asp:BoundField DataField="PLANDATE" HeaderText="Плановая дата" SortExpression="T" ControlStyle-Width="63">            
 <ControlStyle Width="60px"></ControlStyle>
                 </asp:BoundField>
-                <asp:CommandField ButtonType="Image" HeaderText="Управление" ShowDeleteButton="True" ShowEditButton="True" ControlStyle-Width="73" CancelImageUrl="~/Images/cancel.png" DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit-icon.png" UpdateImageUrl="~/Images/rewrite.png">
+                <asp:CommandField ButtonType="Button" HeaderText="Управление" ShowDeleteButton="True" ShowEditButton="True" ControlStyle-Width="73" CancelImageUrl="~/Images/cancel.png" DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit-icon.png" UpdateImageUrl="~/Images/rewrite.png">
                 <ControlStyle Height="30px" Width="30px" />
                 </asp:CommandField>
             </Columns>        
@@ -114,76 +186,6 @@
         </asp:GridView>
 
        <div style="margin: 0px; padding: 0px; text-align: left"; vertical-align: "middle"; display: "table-cell"">         
-           <asp:Table ID="Table1" runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="White" HorizontalAlign="Left">
-               <asp:TableRow runat="server">
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="199" Text="Название процесса в СПД"></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="62" Text="Номер процесса в СПД"></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="82" Text="Рубрика в ЕСРД/ДК"></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="42" Text="ID DK"></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="70" Text="Дата получения логики"></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="94"  Text="Номер служебной записки, по которой логика направлялась" ></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="108" Text="Реакция Управления информатизации"></asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="108">Номер служебной записки по реакции</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="111">Дата реакции Управления информатизации</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="87">Превышение срока реализации (14 рабочих дней)</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="43">Номер GLPI</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="90">Дата передачи на тестирование</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="97">Номер АКТа по факту передачи на тестирование</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="97">Дата реализации (ввод в эксплуатацию)</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="104">Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление)</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="98">Комментарий</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="57">Наличие логики в БР</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="115">Управление-исполнитель по логике</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="80">Просрочено дней</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="68">Плановая дата</asp:TableCell>
-                   <asp:TableCell runat="server" BackColor="#006699" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="140px" VerticalAlign="Middle" Width="80">Управление</asp:TableCell>
-               </asp:TableRow>
-
-               <asp:TableRow runat="server" BackColor="White">
-                    <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" VerticalAlign="Middle" Width="80">      <asp:TextBox ID="TextBox2" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="196px" TextMode="MultiLine" Wrap="true" BorderStyle="None"></asp:TextBox></asp:TableCell>     
-                   
-                    <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">      <asp:TextBox ID="TextBox3" runat="server" Font-Underline="False" Height="100" Width="59" TextMode="MultiLine" Wrap="true" style="resize:none" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-                    <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">    <asp:TextBox ID="TextBox4" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="77" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-                    <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80"><asp:TextBox ID="TextBox5" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="40" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-          
-                   <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">   <asp:TextBox ID="TextBox6" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="67" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-                   <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox7" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="90" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-            
-                   <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80"><asp:TextBox ID="TextBox8" runat="server" style="resize:none" Font-Underline="False" Height="100" Width="107px" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-                  <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox9" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="105" TextMode="MultiLine" BorderStyle="None" ></asp:TextBox></asp:TableCell>
-
-              <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80"> <asp:TextBox ID="TextBox10" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="106" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-            <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">   <asp:TextBox ID="TextBox11" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="84" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-              <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" VerticalAlign="Middle" Width="80"> <asp:TextBox ID="TextBox12" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="43" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-              <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" VerticalAlign="Middle" Width="80"> <asp:TextBox ID="TextBox13" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="88" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-             <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox14" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="92" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-             <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox15" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="93" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-              <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80"> <asp:TextBox ID="TextBox16" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="100" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-             <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox17" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="98" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-              <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80"> <asp:TextBox ID="TextBox18" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="55" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-              <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80"> <asp:TextBox ID="TextBox19" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="110" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-             <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox20" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="77" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-             <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" VerticalAlign="Middle" Width="80">  <asp:TextBox ID="TextBox21" runat="server" style="resize:none"  Font-Underline="False" Height="100" Width="65" TextMode="MultiLine" BorderStyle="None"></asp:TextBox></asp:TableCell>
-
-             <asp:TableCell runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"  VerticalAlign="Middle" Width="80">
-                 <asp:Button ID="Button3" runat="server"  Height="40" OnClick="Button3_Click" Text="Добавить" Width="76px" /></asp:TableCell>
-            </asp:TableRow>
-            </asp:Table>           
           
          
         </div>

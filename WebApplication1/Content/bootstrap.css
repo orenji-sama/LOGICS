@@ -13,6 +13,19 @@ summary {
     display: block;
 }
 
+popup {
+    border: solid;
+    background-color: yellow;
+    width: 200px;
+}
+
+content {
+    background-color: grey;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+
 audio,
 canvas,
 video {
