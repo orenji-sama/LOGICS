@@ -20,3 +20,47 @@ body {
 .card-textbox {
     text-align: left;
 }
+
+
+.CompletedRowStyle {
+    background-color: #e3f1c7;
+   /* padding-right: 12px;
+    text-align: left;
+    color: #666666;
+       */
+}
+
+.RegAndError {
+    background-color: #ffc6bf;
+   /* padding-right: 12px;
+    text-align: left;
+    color: #FFFFFF;
+       */
+}
+
+.RegAndCorrected {
+    background-color: #fff7b4;
+    /* padding-right: 12px;
+    text-align: left;
+    color: #666666;
+*/
+}
+
+.SEDO {
+    background-color: #ededed;   
+}
+
+.DGIGridStyleHeader {   
+    text-align: center;
+    color: #000d41;
+    background-color: #2e98cc;
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI1MCUiIHkxPSIwJSIgeDI9IjUwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMwMDY2OTkiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYzlmZiIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuNDk5Ii8+PHN0b3Agc3RvcC1jb2xvcj0iIzAwNjY5OSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%,color-stop(0, rgb(0, 102, 153)),color-stop(0.499, rgb(92, 201, 255)),color-stop(1, rgb(0, 102, 153)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(270deg,rgb(0, 102, 153) 0%,rgb(92, 201, 255) 49.9%,rgb(0, 102, 153) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(180deg,rgb(0, 102, 153) 0%,rgb(92, 201, 255) 49.9%,rgb(0, 102, 153) 100%);
+    background-image: -ms-repeating-linear-gradient(270deg,rgb(0, 102, 153) 0%,rgb(92, 201, 255) 49.9%,rgb(0, 102, 153) 100%);
+}
+

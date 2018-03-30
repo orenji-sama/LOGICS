@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="Информационный ресурс" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1._Default" %>
 
+
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
       
   
- <div class="jumbotron" >
+ <div class="jumbotron" style="background-image:url(../images/383797307-670x446.jpg); background:repeat">
         <div class="text-center">
             <br />          
            
@@ -27,8 +30,10 @@
             <br />
         <br />
         </div>
-      <div class="popup" style="margin:auto; padding: 10px; width:800px; border-radius: 1px; border-style:solid; border-color:#006699; border-width:1px" >
+      <div class="popup" runat="server" id="popupdiv" style="margin:auto; padding: 10px; width:800px; border-radius: 1px; border-style:solid; border-color:#006699; border-width:1px" >
             <asp:Panel ID="popupPanel" VerticalAlign="Center" runat="server">  
+
+                <input type="text" name="date_field" value="10/24/1984" />
 
                 <table style="width: 100%">
                     <tr>
@@ -72,9 +77,16 @@
                         <td class="card-label">
                             <asp:Label ID="Label7" runat="server" Text="Дата получения логики:" Width="160px"></asp:Label>
                         </td>
-                        <td class = "card-textbox">
-                            <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
-                        </td>
+                        <td class = "card-textbox">                          
+                            <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="100" style="resize:none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox> 
+                            <asp:CompareValidator 
+                                id="cv_date" runat="server"  style="width: 100px"
+    Type="Date" 
+    Operator="DataTypeCheck" 
+    ControlToValidate="TextBox6"  
+    ErrorMessage="Некорректный формат"> 
+</asp:CompareValidator> 
+                   </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -218,8 +230,8 @@
                   <asp:Button ID="Button6" runat="server"  Height="40" OnClick="Button2_Click" Text="Отмена" Width="76px" />
             </asp:Panel></div>
 
-     <asp:GridView ID="GridView2" runat="server" ItemStyle-CssClass="maxWidthGrid"  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" CellPadding="3" BorderWidth="1px"  HorizontalAlign="Center" PageSize="50" AllowUserToResizeColumns="true" OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Vertical" OnRowDeleting="GridView2_RowDeleting" OnRowEditing="GridView2_RowEditing">
-            <AlternatingRowStyle BackColor="#DCDCDC" />
+     <asp:GridView ID="GridView2" runat="server"  AutoGenerateColumns="False" BackColor="White" BorderColor="#000" BorderStyle="None" CellPadding="3" BorderWidth="2px"  HorizontalAlign="Center" PageSize="50" AllowUserToResizeColumns="true" OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Both" OnRowDeleting="GridView2_RowDeleting" OnRowEditing="GridView2_RowEditing">
+            
             <Columns>      
                 <asp:BoundField DataField="LOGNAME" HeaderText="Название процесса в СПД" SortExpression="A"  ControlStyle-Width="193"> 
 <ControlStyle Width="193px"></ControlStyle>
@@ -299,16 +311,9 @@
             <EmptyDataRowStyle BorderStyle="Solid" />
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
 
-<HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" HorizontalAlign="Center"></HeaderStyle>
+<HeaderStyle CssClass="DGIGridStyleHeader"  Font-Bold="True"  HorizontalAlign="Center"></HeaderStyle>
             <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="center" Font-Size="Larger" CssClass="pagerStyle" />
-            <RowStyle ForeColor="Black" BorderStyle="Solid" BorderWidth="1px" BorderColor="#CCCCCC" BackColor="#EEEEEE" />
-            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#0000A9" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#000065" />
         </asp:GridView>
-
        <div style="margin: 0px; padding: 0px; text-align: left"; vertical-align: "middle"; display: "table-cell"">         
           
          
@@ -317,4 +322,15 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;S&quot;, &quot;T&quot; FROM &quot;LOGICS3&quot;"></asp:SqlDataSource>
     </div>
 
+<script type="text/javascript">
+$(function() {
+    $('input[name="date_field"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true
+    }
+});
+</script>
+
     </asp:Content>
+
+

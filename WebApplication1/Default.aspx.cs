@@ -32,9 +32,7 @@ namespace WebApplication1
             con.Open();
             cmd.ExecuteNonQuery();                                       
             Session["tbl"] = ds;
-            GridView2.DataSource = Session["tbl"];
-            FillGrid();
-            GridView2.DataBind();
+            FillGrid();       
             con.Close();            
         }
         // процедура обработки всех делитов, апдейтов, инсертов
@@ -90,6 +88,7 @@ namespace WebApplication1
               */
             GridView2.Visible = true;
             popupPanel.Visible = false;
+            popupdiv.Visible = false;
             if (CheckBox1.Checked)
             {
                 Label1.Visible = false;                         
@@ -107,8 +106,9 @@ namespace WebApplication1
             if (!Page.IsPostBack)
             {              
                 Com = string.Format(standartCom);
-                Command(Com);               
-            }
+                Command(Com);                
+            }          
+
         }
 
         //спизженый в инете кусок кода для расчета рабочих дней
@@ -189,12 +189,38 @@ namespace WebApplication1
         {
             GridView2.DataSource = Session["tbl"];            
             GridView2.DataBind();
+
+            foreach (GridViewRow row in GridView2.Rows)
+            {
+
+                if (row.Cells[9].Text.Equals("Выполнено в срок"))
+                {
+                    row.CssClass = "CompletedRowStyle";
+                }
+                else
+                    if (row.Cells[9].Text.Equals("Превышен срок реализации"))
+                {
+                    row.CssClass = "RegAndError";
+                }
+                else
+                        if (row.Cells[9].Text.Equals("Выполнено с нарушением срока"))
+                {
+                    row.CssClass = "RegAndCorrected";
+                }
+                else
+                {
+                    row.CssClass = "SEDO";
+                }
+            }
+
         }        
 
+        //кнопка "сброс", "отмена"
         protected void Button2_Click(object sender, EventArgs e)
         {
             ClearTable();
             GridView2.EditIndex = -1; //по идее должно убирать редактирование, но как-то хуюшки
+            popupdiv.Visible = false;
         }        
 
         protected void GridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -215,6 +241,7 @@ namespace WebApplication1
 
         protected void GridView2_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            popupdiv.Visible = true;
             popupPanel.Visible = true;
             GridView2.Visible = false;
             Button4.Visible = false;
@@ -282,8 +309,11 @@ namespace WebApplication1
             con.Close();             
             return rowdata;
         }
+
+        // кнопка "добавить"
         protected void Button4_Click(object sender, EventArgs e)
         {
+            popupdiv.Visible = true;
             popupPanel.Visible = true;
             GridView2.Visible = false;
             Button4.Visible = false;
@@ -315,6 +345,9 @@ namespace WebApplication1
             TextBox20.Text = TextBox20.Text.Trim();
             TextBox21.Text = TextBox21.Text.Trim();
         }
+
+
+        //кнопка "добавить" для внесения в таблицу
             protected void Button3_Click(object sender, EventArgs e)
         {
             TrimTextbox();
@@ -334,7 +367,7 @@ namespace WebApplication1
             FillGrid();
         }
                 
-
+        //кнопка "апдейт"
         protected void Button5_Click(object sender, EventArgs e)
         {
             string erow = Convert.ToString(Convert.ToInt32(ViewState["row"]) + 1);
@@ -363,7 +396,8 @@ namespace WebApplication1
             DoEditTable(Com);
             TextBox2.Text = GetRowData("LOGNAME", erow);
             ClearTable();
-        }              
+        }                
+
     }
 }
 
