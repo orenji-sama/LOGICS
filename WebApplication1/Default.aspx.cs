@@ -9,14 +9,16 @@ using System.Data;
 using System.Configuration;
 using System.Data.OleDb;
 using System.Web.UI.WebControls;
+using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WebApplication1
 {
-    public partial class _Default : Page
+    public partial class _Default : System.Web.UI.Page
     {
         string Com;
         // стандартный селект для полного отображения таблицы
-        string standartCom = "SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Реализуется в срок '||PLANDATE  WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Превышен срок реализации'     WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss')) THEN 'Выполнено с нарушением срока'     END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE FROM LOGICS2 ORDER BY LOGROWID";
+        string standartCom = "SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Реализуется в срок '||PLANDATE WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Превышен срок реализации' WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss')) THEN 'Выполнено с нарушением срока'   END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, CASE WHEN TIMEPASS='Реализуется в срок'||PLANDATE THEN 'Дней на реализацию '||((-1)*(select TRUNC(sysdate - PLANDATE) from dual)) WHEN TIMEPASS = 'Превышен срок реализации' OR TIMEPASS = 'Выполнено с нарушением срока'  THEN ''||(select TRUNC(sysdate - PLANDATE) from dual) WHEN TIMEPASS = 'Выполнено в срок' THEN '0' END as DAYPASS, PLANDATE FROM LOGICS2 ORDER BY LOGROWID";
 
         protected void Command(string Com)
         {
@@ -158,7 +160,7 @@ namespace WebApplication1
             {
                 if (TextBox1.Text != "") 
                 {                    
-                        Com = string.Format("SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Реализуется в срок '||PLANDATE  WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Превышен срок реализации'     WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss')) THEN 'Выполнено с нарушением срока'     END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE FROM LOGICS2 WHERE RUBRNAMESPD like '%" + TextBox1.Text + "%' ORDER BY LOGROWID");
+                        Com = string.Format("SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Реализуется в срок '||PLANDATE WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Превышен срок реализации' WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss')) THEN 'Выполнено с нарушением срока'   END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, CASE WHEN TIMEPASS='Реализуется в срок'||PLANDATE THEN 'Дней на реализацию '||((-1)*(select TRUNC(sysdate - PLANDATE from dual)) WHEN TIMEPASS = 'Превышен срок реализации' OR TIMEPASS = 'Выполнено с нарушением срока'  THEN ''||(select TRUNC(sysdate - PLANDATE from dual) WHEN TIMEPASS = 'Выполнено в срок' THEN '0' END as DAYPASS, PLANDATE FROM LOGICS2 WHERE RUBRNAMESPD like '%" + TextBox1.Text + "%' ORDER BY LOGROWID");
                         Command(Com);                    
                 }  
                 else
@@ -175,7 +177,7 @@ namespace WebApplication1
                 newrequest= request.Replace (" ", "' OR RUBRNAMESPD = '");                   
                if (TextBox1.Text != "")
                {
-                   Com = string.Format("SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Реализуется в срок '||PLANDATE  WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Превышен срок реализации'     WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss')) THEN 'Выполнено с нарушением срока'     END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE FROM LOGICS2 WHERE RUBRNAMESPD = '" + newrequest + "'");
+                   Com = string.Format("SELECT LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, CASE    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Реализуется в срок '||PLANDATE WHEN to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') >= to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss') THEN 'Выполнено в срок'    WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CURRENT_DATE, 'dd.mm.yyyy hh24:mi:ss')) AND CREATEDATE is NULL THEN 'Превышен срок реализации' WHEN(to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss') < to_date(CREATEDATE, 'dd.mm.yyyy hh24:mi:ss')) THEN 'Выполнено с нарушением срока'   END as TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, CASE WHEN TIMEPASS='Реализуется в срок'||PLANDATE THEN 'Дней на реализацию '||((-1)*(select TRUNC(sysdate - to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss')) from dual)) WHEN TIMEPASS = 'Превышен срок реализации' OR TIMEPASS = 'Выполнено с нарушением срока'  THEN ''||(select TRUNC(sysdate - to_date(PLANDATE, 'dd.mm.yyyy hh24:mi:ss')) from dual) WHEN TIMEPASS = 'Выполнено в срок' THEN '0' END as DAYPASS, PLANDATE FROM LOGICS2 WHERE RUBRNAMESPD = '" + newrequest + "'");
                   Command(Com);  
                }
                 else
@@ -219,7 +221,7 @@ namespace WebApplication1
         protected void Button2_Click(object sender, EventArgs e)
         {
             ClearTable();
-            GridView2.EditIndex = -1; //по идее должно убирать редактирование, но как-то хуюшки
+            GridView2.EditIndex = -1;
             popupdiv.Visible = false;
         }        
 
@@ -269,6 +271,7 @@ namespace WebApplication1
             TextBox19.Text = GetRowData("ISPUPR", erow);
             TextBox20.Text = GetRowData("DAYPASS", erow);
             TextBox21.Text = GetRowData("PLANDATE", erow);
+            TrimTextbox();
             GridView2.EditIndex = -1;   
         }
 
@@ -328,22 +331,22 @@ namespace WebApplication1
             TextBox3.Text = TextBox3.Text.Trim();
             TextBox4.Text = TextBox4.Text.Trim();
             TextBox5.Text = TextBox5.Text.Trim();
-            TextBox6.Text = TextBox6.Text.Trim();
+            TextBox6.Text = TextBox6.Text.Replace("0:00:00", "").Trim();
             TextBox7.Text = TextBox7.Text.Trim();
             TextBox8.Text = TextBox8.Text.Trim();
             TextBox9.Text = TextBox9.Text.Trim();
-            TextBox10.Text = TextBox10.Text.Trim();
+            TextBox10.Text = TextBox10.Text.Replace("0:00:00", "").Trim();
             TextBox11.Text = TextBox11.Text.Trim();
             TextBox12.Text = TextBox12.Text.Trim();
-            TextBox13.Text = TextBox13.Text.Trim();
+            TextBox13.Text = TextBox13.Text.Replace("0:00:00", "").Trim();
             TextBox14.Text = TextBox14.Text.Trim();
-            TextBox15.Text = TextBox15.Text.Trim();
+            TextBox15.Text = TextBox15.Text.Replace("0:00:00", "").Trim();
             TextBox16.Text = TextBox16.Text.Trim();
             TextBox17.Text = TextBox17.Text.Trim();
             TextBox18.Text = TextBox18.Text.Trim();
             TextBox19.Text = TextBox19.Text.Trim();
             TextBox20.Text = TextBox20.Text.Trim();
-            TextBox21.Text = TextBox21.Text.Trim();
+            TextBox21.Text = TextBox21.Text.Replace("0:00:00", "").Trim();
         }
 
 
@@ -356,8 +359,8 @@ namespace WebApplication1
             
             // сам запрос инсерта            
              Com = string.Format("INSERT INTO LOGICS2 (LOGROWID, LOGNAME, RUBRNAMESPD, RUBRNAMEESRD, IDDK, DATEAR, DOCNUM, REACT, DOCNUMREACT, REACTDATE, TIMEPASS, GLPI, TESTDATE, TESTDOC, CREATEDATE, CREATEDOC, COMMENTR, ISINBR, ISPUPR, DAYPASS, PLANDATE) VALUES ("+GetMaxID()+",'" + TextBox2.Text+"','"+ TextBox3.Text +"','"+ TextBox4.Text + "','"+ TextBox5.Text + "',TO_DATE('"+TextBox6.Text+"', 'dd.mm.yyyy'),'"+ TextBox7.Text + "','" + TextBox8.Text + "','" + TextBox9.Text +  "',TO_DATE('" + TextBox10.Text + "', 'dd.mm.yyyy'),'"+TextBox11.Text + "','" + TextBox12.Text + "',TO_DATE('" + TextBox13.Text + "', 'dd.mm.yyyy'),'" + TextBox14.Text + "',TO_DATE('" + TextBox15.Text + "', 'dd.mm.yyyy'),'" + TextBox16.Text + "','"+ TextBox17.Text + "','" + TextBox18.Text + "','" + TextBox19.Text + "','" +TextBox20.Text + "'," + "TO_DATE('"+TextBox21.Text +"', 'dd.mm.yyyy hh24:mi:ss'))");
-               DoEditTable(Com);
-             CleanTexbox();
+               DoEditTable(Com);             
+            ClearTable();
 
         }
 
@@ -390,14 +393,70 @@ namespace WebApplication1
             string ISINBR = TextBox18.Text;
             string ISPUPR = TextBox19.Text;
             string DAYPASS = TextBox20.Text;
-            string PLANDATE = TextBox21.Text;
-            TrimTextbox();
+            string PLANDATE = TextBox21.Text;            
             Com = string.Format("UPDATE LOGICS2 SET LOGNAME='" + LOGNAME + "',RUBRNAMESPD='" + RUBRNAMESPD + "',RUBRNAMEESRD='" + RUBRNAMEESRD + "',IDDK='" + IDDK + "',DATEAR=TO_DATE('" + DATEAR + "', 'dd.mm.yyyy hh24:mi:ss'),DOCNUM='" + DOCNUM + "',REACT='" + REACT + "',DOCNUMREACT='" + DOCNUMREACT + "',REACTDATE=TO_DATE('" + REACTDATE + "', 'dd.mm.yyyy hh24:mi:ss'),TIMEPASS='" + TIMEPASS + "',GLPI='" + GLPI + "',TESTDATE=TO_DATE('" + TESTDATE + "', 'dd.mm.yyyy hh24:mi:ss'),TESTDOC='" + TESTDOC + "',CREATEDATE=TO_DATE('" + CREATEDATE + "', 'dd.mm.yyyy hh24:mi:ss'),CREATEDOC='" + CREATEDOC + "',COMMENTR='" + COMMENTR + "',ISINBR='" + ISINBR + "',ISPUPR='" + ISPUPR + "',DAYPASS='" + DAYPASS + "',PLANDATE=TO_DATE('" + PLANDATE + "', 'dd.mm.yyyy hh24:mi:ss') WHERE LOGROWID=" + erow + "");
             DoEditTable(Com);
             TextBox2.Text = GetRowData("LOGNAME", erow);
             ClearTable();
-        }                
+        }
 
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+        private void ExportToExcel()
+        {
+            Excel.Application exApp = new Excel.Application();
+            exApp.Visible = true;
+            exApp.Workbooks.Add();
+            Worksheet workSheet = (Worksheet)exApp.ActiveSheet;
+            workSheet.Cells[1, 1] = "Название процесса в СПД";
+            workSheet.Cells[1, 2] = "Номер процесса в СПД";
+            workSheet.Cells[1, 3] = "Рубрика в ЕСРД/ДК";
+            workSheet.Cells[1, 4] = "ID DK";
+            workSheet.Cells[1, 5] = "Дата получения логики";
+            workSheet.Cells[1, 6] = "Номер служебной записки, по которой логика направлялась";
+            workSheet.Cells[1, 7] = "Реакция Управления информатизации";
+            workSheet.Cells[1, 8] = "Номер служебной записки по реакции";
+            workSheet.Cells[1, 9] = "Дата реакции Управления информатизации";
+            workSheet.Cells[1, 10] = "Превышение срока реализации (14 рабочих дней)";
+            workSheet.Cells[1, 11] = "Номер GLPI";
+            workSheet.Cells[1, 12] = "Дата передачи на тестирование";
+            workSheet.Cells[1, 13] = "Номер АКТа по факту передачи на тестирование";
+            workSheet.Cells[1, 14] = "Дата реализации (ввод в эксплуатацию)";
+            workSheet.Cells[1, 15] = "Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление)";
+            workSheet.Cells[1, 16] = "Комментарий";
+            workSheet.Cells[1, 17] = "Наличие логики в БР";
+            workSheet.Cells[1, 18] = "Управление-исполнитель по логике";
+            workSheet.Cells[1, 19] = "Просрочено дней";
+            workSheet.Cells[1, 20] = "Плановая дата";
+            int rowExcel = 2;
+            for (int i = 0; i < GridView2.Rows.Count; i++)
+            {
+                workSheet.Cells[rowExcel, "A"] = GridView2.Rows[i].Cells[0].Text;
+                workSheet.Cells[rowExcel, "B"] = GridView2.Rows[i].Cells[1].Text;
+                workSheet.Cells[rowExcel, "C"] = GridView2.Rows[i].Cells[2].Text;
+                workSheet.Cells[rowExcel, "D"] = GridView2.Rows[i].Cells[3].Text;
+                workSheet.Cells[rowExcel, "E"] = GridView2.Rows[i].Cells[4].Text;
+                workSheet.Cells[rowExcel, "F"] = GridView2.Rows[i].Cells[5].Text;
+                workSheet.Cells[rowExcel, "G"] = GridView2.Rows[i].Cells[6].Text;
+                workSheet.Cells[rowExcel, "H"] = GridView2.Rows[i].Cells[7].Text;
+                workSheet.Cells[rowExcel, "I"] = GridView2.Rows[i].Cells[8].Text;
+                workSheet.Cells[rowExcel, "J"] = GridView2.Rows[i].Cells[9].Text;
+                workSheet.Cells[rowExcel, "K"] = GridView2.Rows[i].Cells[10].Text;
+                workSheet.Cells[rowExcel, "L"] = GridView2.Rows[i].Cells[11].Text;
+                workSheet.Cells[rowExcel, "M"] = GridView2.Rows[i].Cells[12].Text;
+                workSheet.Cells[rowExcel, "N"] = GridView2.Rows[i].Cells[13].Text;
+                workSheet.Cells[rowExcel, "O"] = GridView2.Rows[i].Cells[14].Text;
+                workSheet.Cells[rowExcel, "P"] = GridView2.Rows[i].Cells[15].Text;
+                workSheet.Cells[rowExcel, "Q"] = GridView2.Rows[i].Cells[16].Text;
+                workSheet.Cells[rowExcel, "R"] = GridView2.Rows[i].Cells[17].Text;
+                workSheet.Cells[rowExcel, "S"] = GridView2.Rows[i].Cells[18].Text;
+                workSheet.Cells[rowExcel, "T"] = GridView2.Rows[i].Cells[19].Text;   
+                ++rowExcel;
+            }
+        }
     }
 }
 

@@ -18,7 +18,8 @@
 
 </head>
 <body>
-    <form runat="server" >
+    <div style="background-color: #ffffff;  margin-bottom:10px">
+    <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--Сценарии .NET Framework--%>
@@ -43,15 +44,15 @@
             <!— Include Required Prerequisites —>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
  
 <!— Include Date Range Picker —>
 <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
 
           
-        <div class="navbar">Информация о распорядительных документах
-            <img src="../Content/Logo.png" / style="position: absolute; left: 10px; height: 70px; margin-top: -25px;"> 
+        <div class="navbar" >Информация о реализации логик процессов в СПД
+            <img src="../Images/dgi (2).png" / style="position: absolute; left: 10px; margin-top: -30px;"> 
         </div>        
        
         <div class="container body-content">
@@ -59,13 +60,13 @@
             </asp:ContentPlaceHolder>
         </div>
         <hr>
-        <div class="footerc" style=" bottom: 10px;       
+        <div class="footerc" style="margin-top: 10px;       
     text-align: center;
     font-style: normal;
     vertical-align: central;">
             Марьяшка-умница &copy; <%: DateTime.Now.Year %> |  <a href="mailto:VinogradovaMB@property.mos.ru?subject=Ошибка на сайте">Сообщить об ошибке</a>
         </div>
     </form>
-
+        </div>
 </body>  
 </html>

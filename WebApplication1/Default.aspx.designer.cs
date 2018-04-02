@@ -76,6 +76,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
+        /// Button7 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button7;
+        
+        /// <summary>
         /// popupdiv элемент управления.
         /// </summary>
         /// <remarks>
@@ -265,6 +274,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBox10;
         
         /// <summary>
+        /// cv_date0 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cv_date0;
+        
+        /// <summary>
         /// Label12 элемент управления.
         /// </summary>
         /// <remarks>
@@ -319,6 +337,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBox13;
         
         /// <summary>
+        /// cv_date1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cv_date1;
+        
+        /// <summary>
         /// Label15 элемент управления.
         /// </summary>
         /// <remarks>
@@ -353,6 +380,15 @@ namespace WebApplication1 {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        
+        /// <summary>
+        /// cv_date2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cv_date2;
         
         /// <summary>
         /// Label17 элемент управления.
@@ -461,6 +497,15 @@ namespace WebApplication1 {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox21;
+        
+        /// <summary>
+        /// cv_date3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cv_date3;
         
         /// <summary>
         /// Button3 элемент управления.
