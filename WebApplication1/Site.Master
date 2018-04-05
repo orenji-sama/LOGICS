@@ -7,17 +7,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> – Распоряжения Департамента</title>
-
+    <title><%: Page.Title %> – Контроль логик</title>
+    
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-     <link rel="shortcut icon" href="Images/ico.ico" />
+     <link rel="shortcut icon" href="~/Images/ico.ico" />
 
 </head>
 <body>
+     <div class="navbar" >Информация о реализации логик процессов в СПД
+          <a href="/"> <img src="Images/Logo.png" / style="position: absolute; left: 10px; height:90px; margin-top: -30px;"> </a>
+        </div>      
     <div style="background-color: #ffffff;  margin-bottom:10px">
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -51,9 +54,7 @@
 
 
           
-        <div class="navbar" >Информация о реализации логик процессов в СПД
-            <img src="../Images/dgi (2).png" / style="position: absolute; left: 10px; margin-top: -30px;"> 
-        </div>        
+         
        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -64,7 +65,7 @@
     text-align: center;
     font-style: normal;
     vertical-align: central;">
-            Марьяшка-умница &copy; <%: DateTime.Now.Year %> |  <a href="mailto:VinogradovaMB@property.mos.ru?subject=Ошибка на сайте">Сообщить об ошибке</a>
+            Марьяшка-почти умница &copy; <%: DateTime.Now.Year %> |  <a href="mailto:VinogradovaMB@property.mos.ru?subject=Ошибка на сайте">Сообщить об ошибке</a>
         </div>
     </form>
         </div>

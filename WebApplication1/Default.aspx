@@ -8,21 +8,18 @@
         <div class="text-center">
             <br />          
            
-            
-         
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />      
             <asp:Label ID="Label3" runat="server" Height="30px" Text="Введите номера логик через зарятую:"></asp:Label>
-        <asp:Label ID="Label1" runat="server" Height="30px" Text="Номер логики:"></asp:Label> &nbsp;&nbsp;&nbsp; </span>
-        <asp:TextBox ID="TextBox1" runat="server" Height="30px" Width="80px" style="font-size: small"></asp:TextBox>
+        <asp:Label ID="Label1" runat="server" Height="30px" Text="Номер или название логики:"></asp:Label> &nbsp;&nbsp;&nbsp; </span>
+        <asp:TextBox ID="TextBox1" runat="server" Height="30px" Width="300px" style="font-size: small"></asp:TextBox>
             <span style="font-size: small">&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;
             <asp:CheckBox ID="CheckBox1" runat="server" Text=" Поиск по нескольким логикам" Font-Bold="False" AutoPostBack="True"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button1" runat="server" Height="37px" Text="Поиск" style="font-size: small" Width="80px" OnClick="Button1_Click" />
             <br />
             <br /> </span><asp:Button ID="Button4" runat="server" Height="37px" Text="Добавить" style="font-size: small" Width="80px" OnClick="Button4_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            </span><asp:Button ID="Button1" runat="server" Height="37px" Text="Поиск" style="font-size: small" Width="80px" OnClick="Button1_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Height="37px" Text="Сброс" style="font-size: small" Width="80px" OnClick="Button2_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -30,14 +27,14 @@
             <br />
         <br />
         </div>
-      <div class="popup" runat="server" id="popupdiv" style="margin:auto; padding: 10px; width:800px; border-radius: 1px; border-style:solid; border-color:#006699; border-width:1px; background-color: #fff ">
+      <div class="popup" runat="server" id="popupdiv" style="margin:auto; padding: 10px; width:900px; border-radius: 1px; border-style:solid; border-color:#006699; border-width:1px; background-color: #fff ">
             <asp:Panel ID="popupPanel" VerticalAlign="Center" runat="server">  
 
                 &nbsp;<table style="width: 100%">
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label4" runat="server" Text="Название процесса в СПД:" TextAlign="center" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label4" runat="server" Text="Название процесса в СПД:" TextAlign="center" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
                             <asp:TextBox ID="TextBox2" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400px" Wrap="true"></asp:TextBox>
@@ -45,142 +42,142 @@
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label2" runat="server" Text="Номер процесса в СПД:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label2" runat="server" Text="Номер процесса в СПД:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox3" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label5" runat="server" Text="Рубрика в ЕСРД/ДК:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label5" runat="server" Text="Рубрика в ЕСРД/ДК:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox4" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox4" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label6" runat="server" Text="ID DK:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label6" runat="server" Text="ID DK:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox5" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox5" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label7" runat="server" Text="Дата получения логики:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label7" runat="server" Text="Дата получения логики:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox6" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                             <asp:CompareValidator ID="cv_date" runat="server" ControlToValidate="TextBox6" ErrorMessage="Некорректный формат" Operator="DataTypeCheck" style="width: 100px" Type="Date"> 
 </asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label8" runat="server" Text="Номер служебной записки, по которой логика направлялась:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label8" runat="server" Text="Номер служебной записки, по которой логика направлялась:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox7" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox7" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label9" runat="server" Text="Реакция Управления информатизации:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label9" runat="server" Text="Реакция Управления информатизации:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox8" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox8" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label10" runat="server" Text="Номер служебной записки по реакции:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label10" runat="server" Text="Номер служебной записки по реакции:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox9" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox9" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label11" runat="server" Text="Дата реакции Управления информатизации:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label11" runat="server" Text="Дата реакции Управления информатизации:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox10" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox10" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                             <asp:CompareValidator ID="cv_date0" runat="server" ControlToValidate="TextBox10" ErrorMessage="Некорректный формат" Operator="DataTypeCheck" style="width: 100px" Type="Date"> 
 </asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label12" runat="server" Text="Превышение срока реализации (14 рабочих дней):" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label12" runat="server" Text="Превышение срока реализации (14 рабочих дней):" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox11" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox11" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label13" runat="server" Text="Номер GLPI:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label13" runat="server" Text="Номер GLPI:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox12" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox12" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label14" runat="server" Text="Дата передачи на тестирование:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label14" runat="server" Text="Дата передачи на тестирование:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox13" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox13" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                             <asp:CompareValidator ID="cv_date1" runat="server" ControlToValidate="TextBox13" ErrorMessage="Некорректный формат" Operator="DataTypeCheck" style="width: 100px" Type="Date"> 
 </asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label15" runat="server" Text="Номер АКТа по факту передачи на тестирование:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label15" runat="server" Text="Номер АКТа по факту передачи на тестирование:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox14" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox14" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label16" runat="server" Text="Дата реализации (ввод в эксплуатацию):" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label16" runat="server" Text="Дата реализации (ввод в эксплуатацию):" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox15" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox15" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                             <asp:CompareValidator ID="cv_date2" runat="server" ControlToValidate="TextBox15" ErrorMessage="Некорректный формат" Operator="DataTypeCheck" style="width: 100px" Type="Date"> 
 </asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label17" runat="server" Text="Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление):" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label17" runat="server" Text="Номер АКТа или служебной записки профильному подразделению по факту реализации (уведомление):" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox16" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox16" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label18" runat="server" Height="16px" Text="Комментарий:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label18" runat="server" Height="16px" Text="Комментарий:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
                             <asp:TextBox ID="TextBox17" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
@@ -188,38 +185,38 @@
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label19" runat="server" Text="Наличие логики в БР:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label19" runat="server" Text="Наличие логики в БР:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox18" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox18" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label20" runat="server" Text="Управление-исполнитель по логике:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label20" runat="server" Text="Управление-исполнитель по логике:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox19" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox19" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label21" runat="server" Text="Просрочено дней:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label21" runat="server" Text="Просрочено дней:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox20" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox20" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td class="card-label">
-                            <asp:Label ID="Label22" runat="server" Text="Плановая дата:" Width="160px"></asp:Label>
+                        <td class="card-label" style="width: 321px">
+                            <asp:Label ID="Label22" runat="server" Text="Плановая дата:" Width="310px"></asp:Label>
                         </td>
                         <td class="card-textbox">
-                            <asp:TextBox ID="TextBox21" runat="server" Font-Underline="False" Height="100" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
+                            <asp:TextBox ID="TextBox21" runat="server" Font-Underline="False" Height="40px" style="resize: none" TextMode="MultiLine" Width="400" Wrap="true"></asp:TextBox>
                             <asp:CompareValidator ID="cv_date3" runat="server" ControlToValidate="TextBox21" ErrorMessage="Некорректный формат" Operator="DataTypeCheck" style="width: 100px" Type="Date"> 
 </asp:CompareValidator>
                         </td>
@@ -306,13 +303,22 @@
                 <asp:BoundField DataField="PLANDATE" HeaderText="Плановая дата" SortExpression="T" ControlStyle-Width="63">            
 <ControlStyle Width="60px"></ControlStyle>
                 </asp:BoundField>
-                <asp:CommandField ButtonType="Image" HeaderText="Управление" ShowDeleteButton="True" ShowEditButton="True" ControlStyle-Width="73" CancelImageUrl="~/Images/cancel.png" DeleteImageUrl="~/Images/del.png" EditImageUrl="~/Images/upd.png" UpdateImageUrl="~/Images/rewrite.png">
-                </asp:CommandField>
+                <asp:TemplateField HeaderText="Правка / Удалить" ShowHeader="False">
+                    <EditItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Обновить"></asp:LinkButton>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                       <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" ><asp:Image ID="Image2" runat="server" ImageUrl="~/Images/upd.png" Height="30px" Width="25px" /> Правка</asp:LinkButton>
+                &nbsp; <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" ><asp:Image ID="del" runat="server" ImageUrl="~/Images/del.png" Height="30px" Width="25px"/> Удалить</asp:LinkButton>
+                    </ItemTemplate>
+                    <ControlStyle Width="76px" />
+                </asp:TemplateField>
             </Columns>        
             <EmptyDataRowStyle BorderStyle="Solid" />
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-<HeaderStyle CssClass="DGIGridStyleHeader"  Font-Bold="True"  HorizontalAlign="Center"></HeaderStyle>
+<HeaderStyle CssClass="DGIGridStyleHeader"  Font-Bold="True"  HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
             <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="center" Font-Size="Larger" CssClass="pagerStyle" />
+            <RowStyle HorizontalAlign="Center" />
         </asp:GridView>
        <div style="margin: 0px; padding: 0px; text-align: left"; vertical-align: "middle"; display: "table-cell"">         
           
