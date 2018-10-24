@@ -251,7 +251,11 @@ C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\Microsoft
 C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\Microsoft.AI.Web.xml
 C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\ru\System.Web.Optimization.resources.dll
 C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\AjaxControlToolkit.dll
+C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\obj\Debug\Interop.VBIDE.dll
+C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\obj\Debug\WebApplication1.csproj.ResolveComReference.cache
+C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\DatabaseConnections.dll
+C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\bin\DatabaseConnections.OleDb.dll
+C:\Users\VinogradovaMB\Documents\GIT\Logics\LOGICS\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
