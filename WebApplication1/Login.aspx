@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Информационный ресурс Департамента</title>
     <link rel="stylesheet" href="Content/login.css" type="text/css">
-    <script type="text/javascript" src="/Scripts/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/Scripts/notify.min.js"></script>
-    <script type="text/javascript" src="/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/notify.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-migrate-1.2.1.min.js"></script>
     <link rel="shortcut icon" href="Images/ico.ico" />
 </head>
 <body>
     <form id="form1" runat="server">
     <!-- <div class="bg"></div> -->
-    <h1>Информационный ресурс Департамента</h1>
+    <h1>Система контроля реализации логик процессов Департамента</h1>
     <div class="logo_box">
         <img class="logo" src="Images/logo1.png" alt=""/>
         <ul class="aside-menu">
@@ -123,7 +123,7 @@ $(document).ready(function() {
                         if (document.location.hostname == "localhost")
                             window.location.replace("/Default.aspx");
                         else
-                            window.location.replace("/esrd/Default.aspx");
+                            window.location.replace("/logicscontrol/Default.aspx");
                     }
                     else
                     {         

@@ -41,14 +41,14 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>x64</PlatformTarget>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
@@ -182,6 +182,7 @@
     <Content Include="Images\411.jpg" />
     <Content Include="Images\412.jpg" />
     <Content Include="Images\cancel.png" />
+    <Content Include="Images\creating.jpg" />
     <Content Include="Images\del.png" />
     <Content Include="Images\deleteico.png" />
     <Content Include="Images\dgi %281%29.png" />
@@ -191,13 +192,17 @@
     <Content Include="Images\esrd__0001_warning-copy-2.png" />
     <Content Include="Images\esrd__0001_warningRed.png" />
     <Content Include="Images\ico.ico" />
+    <Content Include="Images\intime.jpg" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\moscow-wallpapers-9.jpg" />
+    <Content Include="Images\notaccepted.JPG" />
+    <Content Include="Images\overdue.jpg" />
     <Content Include="Images\Password.png" />
     <Content Include="Images\tr_back.png" />
     <Content Include="Images\upd.png" />
     <Content Include="Images\Username.png" />
+    <Content Include="Images\withoverdue.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
