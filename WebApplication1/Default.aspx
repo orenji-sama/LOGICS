@@ -6,7 +6,7 @@
     <div class="jumbotron">    
 
         <div class="navpanel" runat="server" id="navpanel" style="margin: auto; margin-bottom: 5px">
-        <table style="width: 100%; border-spacing: 0px; te">
+        <table style="width: 100%; border-spacing: 0px; ">
             <tr>
                 <td style="width: 300px; border-style:solid; border-width:1px; border-color: midnightblue; vertical-align: top;">
                       <p style="text-align: center">Активные фильтры:</p>
@@ -55,9 +55,8 @@
         </table></div>
 
 
-        <div class="text-center">       
-          
-            <div class="popup" runat="server" id="popupdiv" style="margin: auto; padding: 10px; width: 900px; border-radius: 1px; border-style: solid; border-color: #006699; border-width: 1px; background-color: #fff">
+        <div class="text-center">  
+            <div class="popup" runat="server" id="popupdiv">
                 <asp:Panel ID="popupPanel" VerticalAlign="Center" runat="server">
                     &nbsp;<table style="width: 100%">
                         <tr>
@@ -792,8 +791,6 @@
 
 
             <asp:Label ID="Label12" runat="server" Text="Значений не найдено. Повторите поиск" BackColor="#ffcccc"></asp:Label>
-            <br />
-            <br />
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;S&quot;, &quot;T&quot; FROM &quot;LOGICS3&quot;"></asp:SqlDataSource>
         </div>

@@ -6,6 +6,7 @@
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressSSLPort>44321</IISExpressSSLPort>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

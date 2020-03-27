@@ -19,7 +19,7 @@
 </head>
 <body>
      <div class="navbar" >Система контроля реализации логик процессов Департамента
-          <a href="http://spdserver.mlc.gov/logicscontrol/"> <img src="Images/Logo.png" / style="position: absolute; left: 10px; height:90px; margin-top: -30px;">        
+          <a href="http://webspd.mlc.gov/logicscontrol/"> <img src="Images/Logo.png" / style="position: absolute; left: 10px; height:90px; margin-top: -30px;">        
          </a>
           <div class="user" > <asp:Label ID="Label1" runat="server" Text=""></asp:Label> <br /><br /><br />
               <asp:LinkButton ID="LinkButton1" runat="server" CssClass="lb" OnClick="LinkButton1_Click">Выход</asp:LinkButton>

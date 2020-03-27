@@ -170,6 +170,7 @@ namespace WebApplication1
             Button7.Visible = true;
             Button2.Visible = true;
             Labfiltr.Text = "Нет активных фильтров";
+            Label12.Visible = false;
         }
 
         //кнопка поиска
@@ -436,6 +437,7 @@ namespace WebApplication1
             Button5.Visible = false;
             Button3.Visible = true;
             Button7.Visible = false;
+            Label12.Visible = false;
         }
 
         protected void TrimTextbox()
